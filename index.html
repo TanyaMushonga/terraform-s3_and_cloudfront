@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Static Site</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        min-height: 100vh;
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+      h1 {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      .info {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+      .success {
+        color: #4caf50;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Static Site Deployed!</h1>
+      <div class="info">
+        <h2>✅ Infrastructure Status</h2>
+        <p>
+          <span class="success">SUCCESS:</span> S3 bucket created and configured
+        </p>
+        <p>
+          <span class="success">SUCCESS:</span> CloudFront CDN deployed globally
+        </p>
+        <p>
+          <span class="success">SUCCESS:</span> SSL certificate ready for
+          validation
+        </p>
+        <p>
+          <span class="success">SUCCESS:</span> Secure access configured with
+          OAC
+        </p>
+      </div>
+
+      <div class="info">
+        <h2>📊 Your Infrastructure</h2>
+        <p><strong>S3 Bucket:</strong> tanya-static-site-2025-09-29</p>
+        <p>
+          <strong>CloudFront URL:</strong> https://d3uab1d30i8aib.cloudfront.net
+        </p>
+        <p><strong>Region:</strong> us-west-2</p>
+        <p><strong>Managed by:</strong> Terraform</p>
+      </div>
+
+      <div class="info">
+        <h2>🎯 Next Steps</h2>
+        <ol>
+          <li>Add DNS validation record to Namecheap for SSL certificate</li>
+          <li>Configure custom domain in CloudFront</li>
+          <li>Upload your actual website files</li>
+          <li>Set up CI/CD pipeline for automated deployments</li>
+        </ol>
+      </div>
+
+      <div class="info">
+        <h2>🛠️ DevOps Achievement Unlocked!</h2>
+        <p>You've successfully deployed:</p>
+        <ul>
+          <li>Infrastructure as Code with Terraform</li>
+          <li>S3 static website hosting</li>
+          <li>Global CDN with CloudFront</li>
+          <li>Security best practices (OAC, HTTPS)</li>
+          <li>Resource tagging and organization</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
