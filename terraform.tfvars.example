@@ -1,0 +1,21 @@
+# terraform.tfvars.example
+# Copy this file to terraform.tfvars and fill in your values
+
+# AWS region where you want to deploy your S3 bucket
+region = "us-west-2"
+
+# Globally unique S3 bucket name
+bucket_name = "my-static-site-bucket-12345"
+
+# Your domain name (the subdomain you'll create in Namecheap)
+domain_name = "blog.yourdomain.com"
+
+# Environment
+environment = "dev"
+
+# Additional tags
+tags = {
+  Project   = "My Static Site"
+  ManagedBy = "Terraform"
+  Owner     = "Your Name"
+}
