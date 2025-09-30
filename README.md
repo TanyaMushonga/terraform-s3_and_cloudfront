@@ -1,6 +1,10 @@
 # 🚀 AWS Static Site Infrastructure with Terraform
 
-A production-ready Terraform configuration that deploys a **secure, scalable, and globally distributed static website** on AWS using S3, CloudFront, and Certificate Manager.
+A production-ready Terraform configuration that provisions **secure, scalable, and globally distributed static website infrastructure** on AWS using S3, CloudFront, and Certificate Manager.
+
+## 🔗 Related Repository
+
+**[aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy)** - The actual website repository with CI/CD pipelines that automatically deploys to this infrastructure every time you push changes.
 
 [![Terraform](https://img.shields.io/badge/Terraform-1.5+-623CE4?style=flat&logo=terraform)](https://terraform.io)
 [![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?style=flat&logo=amazon-aws)](https://aws.amazon.com)
@@ -138,17 +142,16 @@ terraform output
    _abc123...yourdomain.com → _def456...acm-validations.aws
    ```
 
-### 5. Upload Your Site
+### 5. Set Up Automated Deployment
 
-Upload your static files to the S3 bucket:
+This infrastructure is designed to work with the [aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy) repository, which contains:
 
-```bash
-# Using AWS CLI
-aws s3 sync ./my-website/ s3://your-bucket-name/
+- Your website source code
+- CI/CD pipelines that automatically deploy to this infrastructure
+- Automated content uploads to S3
+- CloudFront cache invalidation on deployments
 
-# Or use the S3 console
-# Make sure you have at least an index.html file
-```
+Simply push changes to the deployment repository, and your site will be automatically updated!
 
 ## 📁 Project Structure
 
@@ -159,11 +162,11 @@ aws-static-site/
 ├── outputs.tf                 # Output values (URLs, IDs, etc.)
 ├── terraform.tfvars           # Your variable values (not in git)
 ├── terraform.tfvars.example   # Example variable values
-├── index.html                 # Sample homepage
-├── error.html                 # Sample error page
 ├── LICENSE.txt                # MIT license
 └── README.md                  # This file
 ```
+
+> **Note**: Website content is managed in the separate [aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy) repository with automated CI/CD deployment.
 
 ## 🔧 Configuration Options
 
@@ -188,17 +191,25 @@ After deployment, you'll get these useful outputs:
 | `s3_bucket_name`             | S3 bucket name             | File uploads                 |
 | `acm_certificate_arn`        | SSL certificate ARN        | Reference in other resources |
 
-## 🛠️ Common Operations
+## 🛠️ Content Management
 
-### Updating Site Content
+### Automated Deployment
 
-1. **Upload new files:**
+Content deployment is handled automatically by the [aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy) repository:
+
+- **Push to Deploy**: Simply push changes to trigger automatic deployment
+- **CI/CD Pipeline**: Handles content upload and cache invalidation
+- **Zero Downtime**: Seamless updates with CloudFront integration
+
+### Manual Operations (if needed)
+
+1. **Manual file upload:**
 
    ```bash
    aws s3 sync ./my-website/ s3://your-bucket-name/
    ```
 
-2. **Invalidate CloudFront cache:**
+2. **Manual cache invalidation:**
    ```bash
    aws cloudfront create-invalidation \
      --distribution-id E1234567890123 \
@@ -260,9 +271,10 @@ After deployment, you'll get these useful outputs:
 
 **4. 403/404 Errors**
 
-- Ensure `index.html` exists in S3 bucket root
-- Check file permissions and bucket policy
+- Ensure content exists in the deployment repository
+- Check that CI/CD pipeline completed successfully
 - Verify CloudFront cache behavior settings
+- Files are deployed automatically from [aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy)
 
 ### Getting Help
 
@@ -312,6 +324,7 @@ This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.t
 
 ## 🔗 Related Resources
 
+- **[aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy)** - Website content and CI/CD deployment repository
 - [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 - [AWS CloudFront Documentation](https://docs.aws.amazon.com/cloudfront/)
 - [AWS S3 Static Website Hosting](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
