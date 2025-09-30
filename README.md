@@ -1,8 +1,8 @@
-# 🚀 AWS Static Site Infrastructure with Terraform
+# AWS Static Site Infrastructure with Terraform
 
 A production-ready Terraform configuration that provisions **secure, scalable, and globally distributed static website infrastructure** on AWS using S3, CloudFront, and Certificate Manager.
 
-## 🔗 Related Repository
+## Related Repository
 
 **[aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy)** - The actual website repository with CI/CD pipelines that automatically deploys to this infrastructure every time you push changes.
 
@@ -10,18 +10,18 @@ A production-ready Terraform configuration that provisions **secure, scalable, a
 [![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?style=flat&logo=amazon-aws)](https://aws.amazon.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.txt)
 
-## ✨ Features
+## Features
 
-- 🌍 **Global CDN** - CloudFront distribution for lightning-fast content delivery worldwide
-- 🔒 **SSL/TLS Encryption** - Automatic HTTPS with AWS Certificate Manager
-- 🛡️ **Security Best Practices** - Origin Access Control (OAC), private S3 bucket, secure policies
-- 💰 **Cost-Optimized** - Smart caching, compression, and PriceClass_100 for cost efficiency
-- 🔄 **Version Control** - S3 bucket versioning enabled for content rollback capabilities
-- 📱 **SPA-Ready** - Custom error handling for Single Page Applications
-- 🏷️ **Resource Tagging** - Comprehensive tagging strategy for cost allocation and management
-- 🔧 **Infrastructure as Code** - Fully reproducible and version-controlled infrastructure
+- **Global CDN** - CloudFront distribution for lightning-fast content delivery worldwide
+- **SSL/TLS Encryption** - Automatic HTTPS with AWS Certificate Manager
+- **Security Best Practices** - Origin Access Control (OAC), private S3 bucket, secure policies
+- **Cost-Optimized** - Smart caching, compression, and PriceClass_100 for cost efficiency
+- **Version Control** - S3 bucket versioning enabled for content rollback capabilities
+- **SPA-Ready** - Custom error handling for Single Page Applications
+- **Resource Tagging** - Comprehensive tagging strategy for cost allocation and management
+- **Infrastructure as Code** - Fully reproducible and version-controlled infrastructure
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -53,7 +53,7 @@ A production-ready Terraform configuration that provisions **secure, scalable, a
 | **ACM Certificate**         | SSL/TLS encryption  | Free SSL certificate with DNS validation            |
 | **S3 Bucket Policy**        | Access control      | Allows only CloudFront to access bucket content     |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -153,7 +153,7 @@ This infrastructure is designed to work with the [aws-static-site-deploy](https:
 
 Simply push changes to the deployment repository, and your site will be automatically updated!
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 aws-static-site/
@@ -168,7 +168,7 @@ aws-static-site/
 
 > **Note**: Website content is managed in the separate [aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy) repository with automated CI/CD deployment.
 
-## 🔧 Configuration Options
+## Configuration Options
 
 ### Variables Reference
 
@@ -191,7 +191,7 @@ After deployment, you'll get these useful outputs:
 | `s3_bucket_name`             | S3 bucket name             | File uploads                 |
 | `acm_certificate_arn`        | SSL certificate ARN        | Reference in other resources |
 
-## 🛠️ Content Management
+## Content Management
 
 ### Automated Deployment
 
@@ -230,15 +230,15 @@ Content deployment is handled automatically by the [aws-static-site-deploy](http
   - Adjust `default_ttl` and `max_ttl` in main.tf
 - **Compression**: Enabled by default for better performance
 
-## 🔒 Security Features
+## Security Features
 
 ### What's Included
 
-- ✅ **Private S3 Bucket** - No public access, CloudFront-only access
-- ✅ **Origin Access Control (OAC)** - Modern replacement for OAI
-- ✅ **HTTPS Enforced** - All HTTP traffic redirected to HTTPS
-- ✅ **IAM Policies** - Least-privilege access principles
-- ✅ **Resource Tagging** - Complete resource attribution
+- **Private S3 Bucket** - No public access, CloudFront-only access
+- **Origin Access Control (OAC)** - Modern replacement for OAI
+- **HTTPS Enforced** - All HTTP traffic redirected to HTTPS
+- **IAM Policies** - Least-privilege access principles
+- **Resource Tagging** - Complete resource attribution
 
 ### Security Best Practices
 
@@ -247,7 +247,7 @@ Content deployment is handled automatically by the [aws-static-site-deploy](http
 - No public S3 bucket access
 - All traffic encrypted in transit
 
-## 💡 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -289,7 +289,7 @@ terraform validate
 terraform apply -auto-approve 2>&1 | tee deploy.log
 ```
 
-## 💰 Cost Optimization
+## Cost Optimization
 
 ### Estimated Monthly Costs (US-West-2)
 
@@ -308,7 +308,7 @@ terraform apply -auto-approve 2>&1 | tee deploy.log
 - Monitor usage with AWS Cost Explorer
 - Use CloudFront price class optimization
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please:
 
@@ -318,11 +318,11 @@ We welcome contributions! Please:
 4. Add/update tests if applicable
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
 
-## 🔗 Related Resources
+## Related Resources
 
 - **[aws-static-site-deploy](https://github.com/TanyaMushonga/aws-static-site-deploy)** - Website content and CI/CD deployment repository
 - [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
@@ -332,6 +332,6 @@ This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.t
 
 ---
 
-**⭐ If this project helped you, please give it a star!**
+**If this project helped you, please give it a star!**
 
-Built with ❤️ using [Terraform](https://terraform.io) and [AWS](https://aws.amazon.com)
+Built with [Terraform](https://terraform.io) and [AWS](https://aws.amazon.com)

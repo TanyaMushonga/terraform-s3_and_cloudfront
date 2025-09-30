@@ -1,4 +1,3 @@
-# main.tf
 terraform {
   required_version = ">= 1.5.0"
   required_providers {
@@ -22,6 +21,7 @@ provider "aws" {
 
 # 1. S3 BUCKET FOR STATIC WEBSITE HOSTING
 # Creates the bucket that will store your static files (HTML, CSS, JS, images)
+
 resource "aws_s3_bucket" "static_site" {
   bucket = var.bucket_name
 
